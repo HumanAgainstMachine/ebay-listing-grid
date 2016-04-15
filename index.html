@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+    <title>Ebay Simple Grid listing template example</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<script>
+var vp = document.createElement("meta");
+vp.setAttribute("name", "viewport");
+vp.setAttribute("content", "width=device-width, initial-scale=1");
+document.getElementsByTagName("head")[0].appendChild(vp);
+</script>
+<style>
+    /* Original work - Dead Simple Grid (c) 2015 Vladimir Agafonkin */
+    /* Modified work - Ebay Simple Grid (c) 2016 Ezio Tarquilio */
+
+    .s-col {
+        padding: 0 1.5em;
+        position:relative;
+    }
+    .s-row:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    @media only screen {.s-col {
+        float: left;
+        width: 100%;
+        box-sizing: border-box;
+    }}
+
+    /* Grid settings for larger than 48em vieports*/
+
+    @media only screen and (min-width: 48em) {
+        #product {
+            width: 66.66%;
+            left:33.33%;
+        }
+        #sidebar {
+            width: 33.33%;
+            right:66.66%;
+        }
+    }    
+
+    /* All remaining css */
+
+    #s-container { 
+        width: 100%;
+        background-color: #fff;
+        font-family: verdana;
+        font-size: 16px;
+        text-align: justify;        
+    }
+
+    #s-header {
+        background-color: #2F3440;
+        color: #F8CA4D;        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0.5em;
+    }    
+
+    #s-photo {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }  
+    
+    #s-h1 {margin:0.5em 0 0 0;}      
+
+    #s-content {margin: 0 -1.5em;}
+
+    .s-h2 {
+        background-color: #2F3440;
+        color: #F5E5C0;
+        padding: 0.5em 1em;
+        border-radius: 10px;
+    }           
+
+    #footer {
+        background-color: #2F3440;        
+        padding:0;        
+    }
+
+    .menu-item {
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center; 
+        color: #F8CA4D;
+        padding: 1em;
+        display: block;
+        border-top: 1px solid rgba(255,255,255,0.2); 
+        border-bottom: 1px solid rgba(0,0,0,0.3);         
+    }
+
+    .menu-item:hover {
+        text-decoration: underline;
+    }
+
+    .menu-item:last-of-type {border-bottom:none;}
+
+    @media only screen and (min-width: 48em) {
+
+        #s-h1 {margin:0 0 0 2em;}
+
+        #footer {
+            display: flex;
+            justify-content: center;
+        }
+
+        #s-header {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .menu-item {border: none;}
+    }
+
+</style>
+<div id="s-container">
+    <div id="s-header">
+        <img src="http://placehold.it/120/EA6045/3F5666?text=LOGO">
+        <h1 id="s-h1">Store Name</h1>
+    </div>
+    <div id="s-content" class="s-row">
+        <div id="product" class="s-col">
+            <div>
+                <h2 class="s-h2">Product Photo</h2>
+                <img id="s-photo" src="http://placehold.it/1200x300/3F5666/F5E5C0?text=Foto">
+            </div>
+            <div>
+                <h2 class="s-h2">Description</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>                
+            </div>
+        </div>
+
+        <div id="sidebar" class="s-col">
+            <div>
+                <h2 class="s-h2">Payments</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+            </div>
+            <div>
+                <h2 class="s-h2">Shipping</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <a class="menu-item" href="#">Store</a>
+        <a class="menu-item" href="#">FAQ</a>
+        <a class="menu-item" href="#">Feedback</a>
+    </div>
+</div>
+</body>
+</html>

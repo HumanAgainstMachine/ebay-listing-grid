@@ -1,0 +1,19 @@
+/* Original work - Dead Simple Grid (c) 2015 Vladimir Agafonkin */
+/* Modified work - Ebay Simple Grid (c) 2016 Ezio Tarquilio */
+
+.col {
+    padding: 0  1.5em;
+    position: relative;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen { .col {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+}}
