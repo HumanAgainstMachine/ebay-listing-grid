@@ -56,7 +56,7 @@ What if we want to keep the `.g-content` on top of the `.g-sidebar` for mobile l
 
 For viewports beyond 48em, we push `.g-content` from the left and `.g-sidebar` from the right. We need simple math to calculate the distances in percentages.
 
-**[Ordering 3 cols example](http://tarqez.github.com/ebay-listing-grid/col_ordering.html)**
+**[Ordering 3 cols example](http://tarqez.github.com/ebay-listing-grid/3cols_ordering.html)**
 
 ### Responsiveness in ebay listing
 

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ELG Column Ordering example</title>
+	<meta name="viewport" content="width=device-vidth, initial-scale=1">
+	<style type="text/css">
+	    /* Original work - Dead Simple Grid (c) 2015 Vladimir Agafonkin
+	       Modified work - Ebay Listing Grid (c) 2016 Ezio Tarquilio */
+
+		.col      {
+			padding: 0  1.5em;
+			position: relative;
+		}
+		.row:after {
+		    content: "";
+		    clear: both;
+		    display: table;
+		}
+		@media only screen { .col {
+		    float: left;
+		    width: 100%;
+		    box-sizing: border-box;
+		}}
+
+
+		/* the 6 permutations css */
+
+		@media only screen and (min-width: 30em) {
+			.a, .b, .c {width: 33.33%;}
+
+			.a.n2 {left: 33.33%;}
+			.b.n2 {right: 33.33%;}
+
+			.a.n3 {left: 66.66%;}
+			.c.n3 {right: 66.66%;}
+
+			.b.n4 {left: 33.33%;}
+			.c.n4 {right: 33.33%;}
+
+			.a.n5 {left: 33.33%;}
+			.b.n5 {left: 33.33%;}
+			.c.n5 {right: 66.66%;}
+
+			.a.n6 {left: 66.66%;}
+			.b.n6 {right: 33.33%;}
+			.c.n6 {right: 33.33%;}
+
+		}
+
+		/* visual pleasant css */
+
+		body {
+			font-family: verdana;
+			font-size: 16px; 
+		}
+
+		.row {
+			margin: 2em 0;
+			color: white;
+		}
+
+		.a, .b, .c {font-size: 3em;}
+
+		.a {background-color: #004358;}
+		.b {background-color: #1F8A70;}
+		.c {background-color: #FD7400;}		
+
+	</style>
+</head>
+<body>
+	<h1>ELG 3 columns ordering example</h1>
+	<p>Narrowing enought the browser window, cols in every rows will stack up in the same order:<br> A<br> B<br> c<br> That is the real order, while for larger viewports cols are reordered in all the 6 possible cases.</p>
+	<div class="row">
+		<div class="col a n1">A</div>
+		<div class="col b n1">B</div>
+		<div class="col c n1">C</div>
+	</div>
+	<div class="row">
+		<div class="col a n2">A</div>
+		<div class="col b n2">B</div>
+		<div class="col c n2">C</div>
+	</div>
+	<div class="row">
+		<div class="col a n3">A</div>
+		<div class="col b n3">B</div>
+		<div class="col c n3">C</div>
+	</div>
+	<div class="row">
+		<div class="col a n4">A</div>
+		<div class="col b n4">B</div>
+		<div class="col c n4">C</div>
+	</div>
+	<div class="row">
+		<div class="col a n5">A</div>
+		<div class="col b n5">B</div>
+		<div class="col c n5">C</div>
+	</div>
+	<div class="row">
+		<div class="col a n6">A</div>
+		<div class="col b n6">B</div>
+		<div class="col c n6">C</div>
+	</div>			
+</body>
+</html>
