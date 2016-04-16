@@ -10,7 +10,7 @@ Ebay Listing Grid (ELG) is a CSS grid and a micro framework for designing respon
  * allows columns ordering
  * supports all major modern browsers, serving one-column mobile layout to older browsers
 
-**[Template example](http://tarqez.github.com/ebay-listing-grid)** &nbsp;|&nbsp; [Source](css/elg.css)
+**[Template example](http://tarqez.github.com/ebay-listing-grid)** &nbsp;|&nbsp; [Source](elg.css)
 
 ### Basic example
 **_content with sidebar on the right_**
