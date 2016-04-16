@@ -1,79 +1,98 @@
-Ebay Simple Grid
-================
+Ebay Listing Grid
+=================
 
-Ebay Simple Grid (ESG) is a CSS grid micro framework/concept for designing ebay listing responsive templates, no javascript required. 
+Ebay Listing Grid (ELG) is a CSS grid and a micro framework for designing responsive ebay listing templates, no javascript required. 
 
- * tiny (just **8 css** `property: value;`), no dependencies
- * only **two classes** (`s-row` and `s-col`)
+ * tiny (**only 8 css** `property: value;`)
+ * only **two classes** (`g-row` and `g-col`)
  * fluid columns with **fixed gutters**
- * mobile first, then you set column width in media queries for larger viewport
- * column ordering by `left` and `right` css properties
+ * mobile first
+ * allows columns ordering
  * supports all major modern browsers, serving one-column mobile layout to older browsers
 
-**[Template example](http://tarqez.github.com/ebay-simple-grid)** &nbsp;|&nbsp; [Source](css/esg.css)
+**[Template example](http://tarqez.github.com/ebay-listing-grid)** &nbsp;|&nbsp; [Source](css/elg.css)
 
-### Basic example with sidebar on the right
+### Basic example
+**_content with sidebar on the right_**
 
 ```html
-<div class="s-row">
-	<div class="s-col content"> ... </div>
-	<div class="s-col sidebar"> ... </div>
+<div class="g-row">
+	<div class="g-col g-content"> ... </div>
+	<div class="g-col g-sidebar"> ... </div>
 </div>
 ```
 
 ```css
 @media only screen and (min-width: 48em) {
-	.content {width: 66.66%;}
-	.sidebar {width: 33.33%;}
+	.g-content {width: 66.66%;}
+	.g-sidebar {width: 33.33%;}
 }
 ```
 
-**Rows** of the grid are block elements classed with `s-row`, while **cols** are block elements inside a row classed with `s-col`.
+**Rows** are div elements with `g-row` class, while **cols** are div elements with `g-col` class.
 
 In the example, we have a row with two cols that stack up in viewports up to 48em of width. Beyond 48em, cols line up with widths of 66.66% the first, 33.33% the second.
 
-ESG is mobile-first, therefore it provides 100%-width cols by default. We start with a one-column layout and then a multiple-cols layout for larger vieport. We do this by setting widths in simple percentages for each media query breakpoint.
+ELG is mobile first, therefore it provides 100%-width cols by default. We start with a one column layout and then with a multiple cols layout for larger viewport. We do this by setting widths in percentages for each media query breakpoint.
 
 
-### Basic example with sidebar on the left
-##### (column ordering)
+### Column ordering example
+**_moving sidebar on the left_**
 
-We want to move the sidebar on the left, swapping it with the content. We also want to keep the sidebar on the bottom of the stack in mobile layout. We only need to change the css, this way:
+What if we want to keep the `.g-content` on top of the `.g-sidebar` for mobile layout, while having the `.g-sidebar` on the left for larger viewport? Column ordering comes in handy and we only need to add `left:` and `right:` properties to css.
 
 ```css
 @media only screen and (min-width: 48em) {
-	.content {
+	.g-content {
 		width: 66.66%; 
 		left: 33.33%;
 	}
-	.sidebar {
+	.g-sidebar {
 		width: 33.33%;
 		right: 66.66%
 	}
 }
 ```
 
-For viewports larger or equal to 48em, we push `.content` from left by the width of the sidebar and, push `.sidebar` from right by the width of the content. We do this by css properties `left` and `right`.
+For viewports beyond 48em, we push `.g-content` from the left and `.g-sidebar` from the right. We need simple math to calculate the distances in percentages.
 
-### Explanation
+**[Ordering 3 cols example](http://tarqez.github.com/ebay-listing-grid/col_ordering.html)**
 
-#### Fixed Gutters and Box Sizing
+### Responsiveness in ebay listing
 
-Fixed gutter widths for columns are set as padding combined with `box-sizing: border-box` for `col` elements. This  means that your fluid design can finally have consistent whitespace, and you don't need to mess with weird percentages like `margin: 0 1.337%` and related column width calculations. Need a one-third column? Set its width to `33.33%` and padding to any value you like (ESG sets 1.5em by default).
+Templates are embedded in ebay pages, which don't allow full control on our layout behavior. For example on a large monitor of PCs and laptops, ebay fixes page viewport width to more than 1000px, resizing the browser window doesn't resize the viewport and a horizontal scrollbar bar appears. As a consequence, the template layout doesn't adapt responsevely to the new browser window.
 
-#### Column Setup
+But, when we use the ebay app on our phones, we will see the mobile layout. 
 
-All `col` elements are places inside clearfixed `row` elements and have `float: left; width: 100%` set by default. This means that you only need to change `width` to set up columns &mdash; no other properties required.
+##### Mobile browsers and the javascript trick
 
-Need to turn 3 one-column elements into 3 columns? Set their width to `33.33%` and you're all set. Need to switch a 2-column block back to one-column mode? Set their width to `100%`. Forget about messing with classes or SASS/Less mixins and formulas.
+Unfortunately the mobile version of the ebay website doesn't show the mobile template layout, because we don't have full control on ebay page, as said above. A trick that works in some mobile browsers is to add on top of css + HTML code the javascript
 
+```javascript
+<script>
+	var vp = document.createElement("meta");
+	vp.setAttribute("name", "viewport");
+	vp.setAttribute("content", "width=device-width, initial-scale=1");
+	document.getElementsByTagName("head")[0].appendChild(vp);
+</script>
+```
 
-#### Mobile First and Browser Support
+I have tested this on 
 
-The `box-sizing` property is widely supported, starting from IE 8. CSS3 Media queries are supported by all modern browsers, and a polyfill ([Respond.js][]) can be used to cover IE 8. Due to mobile first approach (we start from one column layout and build from there), older browsers which don't support both features (e.g. IE 6&ndash;7) receive a mobile layout which is perfectly accessible. So you have everyone covered nicely.
+* Chrome mobile 49.0.x - works
+* Android 4.4.4 stock browser - works
+* Firefox mobile 45.0.x - doesn't works
+
+### Cautions
+
+1. Don't use ebay _quick listing tool_. Use the _form with more choices_ to avoid unwanted changes of template code (you don't need this caution with API and File Exchange)
+
+2. Remove all unnecessary blanks and join all lines of template code in only one line
+
+3. Use prefix for all your css _ID_ and _class_ names to avoid collitions with ebay names, like `.g-content` in the example above
 
 ---
 
 ### Thanks
 
-ESG is a fork from [Dead Simple Grid](http://github.com/mourner/dead-simple-grid) an idea of Vladimir Agafonkin (creator of Leaflet)
+ELG is a fork from [Dead Simple Grid](http://github.com/mourner/dead-simple-grid) an idea of Vladimir Agafonkin (creator of Leaflet)

@@ -1,60 +1,60 @@
 <!doctype html>
 <html>
 <head>
-    <title>Ebay Simple Grid listing template example</title>
+    <title>Ebay Listing Grid template example</title>
     <meta charset="utf-8">
 </head>
 <body>
 <script>
-var vp = document.createElement("meta");
-vp.setAttribute("name", "viewport");
-vp.setAttribute("content", "width=device-width, initial-scale=1");
-document.getElementsByTagName("head")[0].appendChild(vp);
+    var vp = document.createElement("meta");
+    vp.setAttribute("name", "viewport");
+    vp.setAttribute("content", "width=device-width, initial-scale=1");
+    document.getElementsByTagName("head")[0].appendChild(vp);
 </script>
 <style>
     /* Original work - Dead Simple Grid (c) 2015 Vladimir Agafonkin */
-    /* Modified work - Ebay Simple Grid (c) 2016 Ezio Tarquilio */
+    /* Modified work - Ebay Listing Grid (c) 2016 Ezio Tarquilio */
 
-    .s-col {
+    .g-col {
         padding: 0 1.5em;
         position:relative;
     }
-    .s-row:after {
+    .g-row:after {
         content: "";
         clear: both;
         display: table;
     }
-
-    @media only screen {.s-col {
+    @media only screen {.g-col {
         float: left;
         width: 100%;
         box-sizing: border-box;
     }}
 
+
     /* Grid settings for larger than 48em vieports*/
 
     @media only screen and (min-width: 48em) {
-        #product {
+        #g-product {
             width: 66.66%;
-            left:33.33%;
+            left: 33.33%;
         }
-        #sidebar {
+        #g-sidebar {
             width: 33.33%;
-            right:66.66%;
+            right: 66.66%;
         }
     }    
 
     /* All remaining css */
 
-    #s-container { 
-        width: 100%;
+    #g-container { 
+        width: 98%;
         background-color: #fff;
         font-family: verdana;
         font-size: 16px;
         text-align: justify;        
     }
 
-    #s-header {
+    #g-header {
         background-color: #2F3440;
         color: #F8CA4D;        
         display: flex;
@@ -64,29 +64,29 @@ document.getElementsByTagName("head")[0].appendChild(vp);
         padding: 0.5em;
     }    
 
-    #s-photo {
+    #g-photo {
         max-width: 100%;
         height: auto;
         display: block;
     }  
     
-    #s-h1 {margin:0.5em 0 0 0;}      
+    #g-h1 {margin:0.5em 0 0 0;}      
 
-    #s-content {margin: 0 -1.5em;}
+    #g-content {margin: 0 -1.5em;}
 
-    .s-h2 {
+    .g-h2 {
         background-color: #2F3440;
         color: #F5E5C0;
         padding: 0.5em 1em;
         border-radius: 10px;
     }           
 
-    #footer {
+    #g-footer {
         background-color: #2F3440;        
         padding:0;        
     }
 
-    .menu-item {
+    .g-menu-item {
         text-decoration: none;
         font-weight: bold;
         text-align: center; 
@@ -97,64 +97,64 @@ document.getElementsByTagName("head")[0].appendChild(vp);
         border-bottom: 1px solid rgba(0,0,0,0.3);         
     }
 
-    .menu-item:hover {
+    .g-menu-item:hover {
         text-decoration: underline;
     }
 
-    .menu-item:last-of-type {border-bottom:none;}
+    .g-menu-item:last-of-type {border-bottom:none;}
 
     @media only screen and (min-width: 48em) {
 
-        #s-h1 {margin:0 0 0 2em;}
+        #g-h1 {margin:0 0 0 2em;}
 
-        #footer {
+        #g-footer {
             display: flex;
             justify-content: center;
         }
 
-        #s-header {
+        #g-header {
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
         }
 
-        .menu-item {border: none;}
+        .g-menu-item {border: none;}
     }
 
 </style>
-<div id="s-container">
-    <div id="s-header">
+<div id="g-container">
+    <div id="g-header">
         <img src="http://placehold.it/120/EA6045/3F5666?text=LOGO">
-        <h1 id="s-h1">Store Name</h1>
+        <h1 id="g-h1">Store Name</h1>
     </div>
-    <div id="s-content" class="s-row">
-        <div id="product" class="s-col">
+    <div id="g-content" class="g-row">
+        <div id="g-product" class="g-col">
             <div>
-                <h2 class="s-h2">Product Photo</h2>
-                <img id="s-photo" src="http://placehold.it/1200x300/3F5666/F5E5C0?text=Foto">
+                <h2 class="g-h2">Product Photo</h2>
+                <img id="g-photo" src="http://placehold.it/1200x300/3F5666/F5E5C0?text=Foto">
             </div>
             <div>
-                <h2 class="s-h2">Description</h2>
+                <h2 class="g-h2">Description</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>                
             </div>
         </div>
 
-        <div id="sidebar" class="s-col">
+        <div id="g-sidebar" class="g-col">
             <div>
-                <h2 class="s-h2">Payments</h2>
+                <h2 class="g-h2">Payments</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
             </div>
             <div>
-                <h2 class="s-h2">Shipping</h2>
+                <h2 class="g-h2">Shipping</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
             </div>
         </div>
     </div>
-    <div id="footer">
-        <a class="menu-item" href="#">Store</a>
-        <a class="menu-item" href="#">FAQ</a>
-        <a class="menu-item" href="#">Feedback</a>
+    <div id="g-footer">
+        <a class="g-menu-item" href="#">Store</a>
+        <a class="g-menu-item" href="#">FAQ</a>
+        <a class="g-menu-item" href="#">Feedback</a>
     </div>
 </div>
 </body>
