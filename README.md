@@ -10,7 +10,7 @@ Ebay Listing Grid (ELG) is a CSS grid and a micro framework for designing respon
  * allows columns ordering
  * supports all major modern browsers, serving one-column mobile layout to older browsers
 
-**[Template example](http://tarqez.github.com/ebay-listing-grid)** &nbsp;|&nbsp; [Source](elg.css)
+**[Template example](http://tarqez.github.io/ebay-listing-grid)** &nbsp;|&nbsp; [Source](elg.css)
 
 ### Basic example
 **_content with sidebar on the right_**
@@ -56,7 +56,7 @@ What if we want to keep the `.g-content` on top of the `.g-sidebar` for mobile l
 
 For viewports beyond 48em, we push `.g-content` from the left and `.g-sidebar` from the right. We need simple math to calculate the distances in percentages.
 
-**[Ordering 3 cols example](http://tarqez.github.com/ebay-listing-grid/3cols_ordering.html)**
+**[Ordering 3 cols example](http://tarqez.github.io/ebay-listing-grid/3cols_ordering.html)**
 
 ### Responsiveness in ebay listing
 
